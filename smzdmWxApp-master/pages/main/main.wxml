@@ -1,0 +1,159 @@
+<!--main.wxml-->
+
+<wxs module="filters" src="../../utils/util.wxs" />
+
+<view>
+  <block class="base" wx:for="{{list}}" wx:key="{{list}}">
+
+
+    <!-- 好文 -->
+    <view class="show" wx:if="{{item.article_first_channel_name==article}}">
+      <navigator url="../../pages/articleInfo/articleInfo?id={{item.article_id}}">
+        <view class="article-body">
+
+          <view class="head">
+            <image src="../../images/tag_haojia_guonei.png" class="head-tag"></image>
+            <text class="head-text">{{item.article_channel_name}}</text>
+          </view>
+          <view class="head-line" />
+          <!-- body -->
+          <view class="article-part">
+            <div class="div-image">
+              <view class="article-float-view">
+                <image src="{{item.article_avatar}}" class="article-article-author" />
+                <text class="article-article-text">{{item.article_referrals}}</text>
+              </view>
+              <view class="article-float-time">
+                <text class="article-article-text">{{item.article_format_date}}</text>
+              </view>
+              <image src="{{item.article_pic}}" class="article-img" />
+            </div>
+            <view>
+              <view style="display:flex;flex-direction:row;">
+                <text class="item-article-title">{{item.article_title}}</text>
+              </view>
+            </view>
+
+            <div class="article-tag-div">
+              <text class="article-tag">{{item.tag_category}}</text>
+              <view class="article-tag-collection-div">
+                <image class="article-tag-img" src="../../images/search_wikihuati_icon.png"></image>
+                <text class="article-collection-text">{{item.article_collection}}</text>
+                <image class="article-tag-comment-img" src="../../images/search_wikiicon_dianping.png"></image>
+                <text class="article-collection-text">{{item.article_comment}}</text>
+              </view>
+            </div>
+            <view class="bottom-line" />
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <!-- 好价 -->
+    <view class="show" wx:elif="{{item.article_channel_name==discount||item.article_channel_name==worldbuy}}">
+      <navigator url="../../pages/mainInfo/mainInfo?id={{item.article_id}}" hover-class="navigator-hover">
+        <view class="price-body">
+          <!-- head  -->
+          <view class="head">
+            <image src="../../images/tag_haojia_guonei.png" class="head-tag"></image>
+            <text class="head-text">{{item.article_channel_name}}</text>
+          </view>
+          <view class="head-line" />
+
+          <!-- body -->
+          <!-- 图文 左右结构 -->
+          <view class="price-part">
+            <image src="{{item.article_pic}}" class="price-img" />
+            <!-- 文字上下结构 -->
+            <view class="price-article">
+              <view>
+                <text class="item-title">{{item.article_title}}</text>
+              </view>
+              <text class="price-price">{{item.article_price}}</text>
+
+              <!-- 灰色标签左右结构 -->
+              <div class="price-tag-div">
+                <view class="price-tag">
+                  <text class="price-mall">{{item.article_mall}}</text>
+                  <view class="price-mall-line"></view>
+                  <text class="price-date">{{item.article_format_date}}</text>
+                </view>
+                <view class="price-tag-collection-div">
+                  <image class="price-tag-img" src="../../images/search_wikiicon_dianping.png"></image>
+                  <text class="price-collection-text">{{item.article_comment}}</text>
+                  <!-- 好价 -->
+                  <view class="right-view">
+                    <image class="price-tag-comment-img" src="../../images/search_wikiicon_zhi.png"></image>
+                    <text class="price-collection-text">{{(filters.parse(item.article_unworthy)+filters.parse(item.article_worthy))== '0'?0:filters.parse(filters.toFix(filters.parse(item.article_worthy)/(filters.parse(item.article_unworthy)+filters.parse(item.article_worthy))))*1000/10}}%
+                <!-- 直接*100会出现99.999999 -->
+             </text>
+                  </view>
+                </view>
+              </div>
+            </view>
+          </view>
+        </view>
+        <view class="bottom-line" />
+      </navigator>
+    </view>
+    <!-- 资讯 -->
+    <view class="show" wx:else>
+      <navigator url="../../pages/newsInfo/newsInfo?id={{item.article_id}}" hover-class="navigator-hover">
+        <view class="price-body">
+          <!-- head  -->
+          <view class="head">
+            <image src="../../images/tag_haojia_guonei.png" class="head-tag"></image>
+            <text class="head-text">{{item.article_channel_name}}</text>
+          </view>
+          <view class="head-line" />
+          <!-- body -->
+          <!-- 图文 左右结构 -->
+          <view class="price-part">
+            <image src="{{item.article_pic}}" class="price-img" />
+            <!-- 文字上下结构 -->
+            <view class="price-article">
+              <view>
+                <text class="item-title">{{item.article_title}}</text>
+              </view>
+              <text class="price-price">{{item.article_price}}</text>
+
+              <!-- 灰色标签左右结构 -->
+
+
+              <div class="price-tag-div">
+
+                <view class="price-tag">
+
+                  <text class="price-mall">{{item.article_rzlx_name}}</text>
+
+                  <view class="price-mall-line"></view>
+                  <text class="price-date">{{item.article_format_date}}</text>
+                </view>
+                <view class="price-tag-collection-div">
+                  <image class="price-tag-img" src="../../images/search_wikiicon_dianping.png"></image>
+                  <text class="price-collection-text">{{item.article_comment}}</text>
+
+
+                  <!-- 资讯 -->
+                  <view class="right-view">
+                    <image class="price-tag-comment-img" src="../../images/tab_btn_qiuzan.png"></image>
+                    <text class="price-collection-text">{{item.article_love_count}}</text>
+
+                  </view>
+                </view>
+              </div>
+
+            </view>
+
+          </view>
+
+        </view>
+        <view class="bottom-line" />
+      </navigator>
+    </view>
+
+  </block>
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在加载</view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+var filters={
+  toFix:function(value){
+    return value.toFixed(2)
+  }
+}
+var parse={
+  parse:function(value){
+    return parseFloat(value)
+  }
+}
+var parseInt = {
+  parseInt: function (value) {
+    return parseInt(value)
+  }
+}
+
+
+module.exports={
+  toFix:filters.toFix,
+   parse:parse.parse,
+   parseInt: parseInt.parseInt
+}
+
+

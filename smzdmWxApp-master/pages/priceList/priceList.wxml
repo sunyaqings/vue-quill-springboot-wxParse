@@ -1,0 +1,59 @@
+<!--pages/priceList/priceList.wxml-->
+<wxs module="filters" src="../../utils/util.wxs" />
+<view>
+  <block wx:for="{{list}}" wx:key="{{list}}">
+    <view class="show">
+      <navigator url="../../pages/mainInfo/mainInfo?id={{item.article_id}}">
+        <view class="price-body">
+          <!-- head  -->
+          <view class="head">
+            <image src="../../images/tag_haojia_guonei.png" class="head-tag"></image>
+            <text class="head-text">好价</text>
+          </view>
+          <view class="head-line" />
+
+          <!-- body -->
+          <!-- 图文 左右结构 -->
+          <view class="price-part">
+            <image src="{{item.article_pic}}" class="price-img" />
+            <!-- 文字上下结构 -->
+            <view class="price-article">
+              <view>
+                <text class="item-title">{{item.article_title}}</text>
+                <text class="price-price">{{item.article_price}}</text>
+
+              </view>
+
+              <!-- 灰色标签左右结构 -->
+
+              <div class="price-tag-div">
+                <view class="price-tag">
+                  <text class="price-mall">{{item.article_mall}}</text>
+                  <view class="price-mall-line"></view>
+                  <text class="price-date">{{item.article_format_date}}</text>
+                </view>
+
+                <view class="price-tag-collection-div">
+                  <image class="price-tag-img" src="../../images/search_wikiicon_dianping.png"></image>
+                  <text class="price-collection-text">{{item.article_comment}}</text>
+                  <image class="price-tag-comment-img" src="../../images/search_wikiicon_zhi.png"></image>
+                  <text class="price-collection-text">{{(filters.parse(item.article_unworthy)+filters.parse(item.article_worthy))== '0'?0:filters.parse(filters.toFix(filters.parse(item.article_worthy)/(filters.parse(item.article_unworthy)+filters.parse(item.article_worthy))))*1000/10}}%</text>
+                </view>
+
+                <!-- 好价 -->
+                <view class="right-view">
+                </view>
+              </div>
+            </view>
+          </view>
+          <view class="bottom-line" />
+        </view>
+      </navigator>
+    </view>
+
+  </block>
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在加载</view>
+  </view>
+</view>

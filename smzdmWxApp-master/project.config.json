@@ -1,0 +1,66 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.8",
+	"appid": "wx66123a20cb1728a2",
+	"projectname": "womaiwang",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "haowen",
+					"pathName": "pages/articleList/articleList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mainInfo",
+					"pathName": "pages/mainInfo/mainInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "newsInfo",
+					"pathName": "pages/newsInfo/newsInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "priceList",
+					"pathName": "pages/priceList/priceList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "main",
+					"pathName": "pages/main/main"
+				}
+			]
+		}
+	}
+}

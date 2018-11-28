@@ -1,0 +1,37 @@
+<!--pages/maininfo/maininfo.wxml-->
+
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<view  class="banner-view">
+<text style="display:{{display}}" class="choice">{{choice}}</text>  
+<view class="bannerImageView" wx:if="{{bannerLenght == '0'}}">
+<image class="bannerImage"  src="{{article_pic}}"/>
+</view>
+<swiper wx:else indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+    <block wx:key="{{banner}}" wx:for="{{banner}}">
+      <swiper-item class="swiper-item">
+        <image src="{{item.pic}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+    
+</swiper>
+</view>
+<view style="display:{{display}}" class="mall-view">
+<text class="mall-text">{{mall}}</text>
+<view  class="mall-line"></view>
+<text class="mall-date">{{date}}</text>
+<view class="mall-line"></view>
+<text class="mall-date">{{article_referrals}}</text>
+</view>
+
+<view class="mall-title-div">
+<text class="mall-title">{{article_title}}</text>
+<text class="mall-price">{{article_price}}</text>
+
+<text class="mall-desc">{{article_phrase_desc}}</text>
+
+</view>
+<view class="wxParse">
+<template is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
+<template is="wxParse" data="{{wxParseData:product_intro.nodes}}"/>
+</view>

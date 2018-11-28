@@ -1,0 +1,22 @@
+<!--pages/articleList/articleList.wxml-->
+<view>
+  <block wx:for="{{list}}" wx:key="{{list}}">
+    <!-- 好文 -->
+      <navigator url="../../pages/markDownInfo/markDownInfo?id={{item.id}}">
+        <view class="articleList-body">
+          <!-- body -->
+              <view style="display:flex;flex-direction:row;">
+                <text class="item-article-title">{{item.title}}</text>
+              </view>
+
+          <view class="bottom-line" />
+
+        </view>
+      </navigator>
+ 
+  </block>
+  <!-- <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在加载</view>
+  </view> -->
+</view>

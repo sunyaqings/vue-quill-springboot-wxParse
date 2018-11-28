@@ -1,0 +1,22 @@
+<!--pages/newsInfo/newsInfo.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="article-body">
+<text style="display:{{display}}" class="news">{{news}}</text>
+<image class="banner" src="{{banner}}"></image>
+<view class="article">
+
+
+<text class="article_title">{{article_title}}</text>
+<view class="author-view">
+<image  src="{{article_avatar}}" class="author-img"></image>
+
+<text style="display:{{display}}"  class="author-date">{{article_format_date}}</text>
+</view>
+<view class="wxParse">
+<template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+
+</view>
+
+</view>

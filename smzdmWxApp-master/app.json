@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/markDown/markDown",
+    "pages/main/main",
+    "pages/priceList/priceList",
+    "pages/articleList/articleList",
+    "pages/logs/logs",
+    "pages/mainInfo/mainInfo",
+    "pages/articleInfo/articleInfo",
+    "pages/newsInfo/newsInfo",
+    "pages/markDownInfo/markDownInfo"
+  ],
+  "window": {
+    "backgroundColor": "#de554f",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#de554f",
+    "navigationBarTitleText": "什么值得买",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "50"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#de554f",
+    "borderStyle": "withe",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/markDown/markDown",
+        "iconPath": "images/ic_tab_haowen_normal.png",
+        "selectedIconPath": "images/ic_tab_haowen_selected.png",
+        "text": "富文本"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "images/ic_tab_home_normal.png",
+        "selectedIconPath": "images/ic_tab_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/priceList/priceList",
+        "iconPath": "images/ic_tab_haojia_normal.png",
+        "selectedIconPath": "images/ic_tab_haojia_selected.png",
+        "text": "好价"
+      },
+      {
+        "pagePath": "pages/articleList/articleList",
+        "iconPath": "images/ic_tab_haowen_normal.png",
+        "selectedIconPath": "images/ic_tab_haowen_selected.png",
+        "text": "好文"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 120000
+  }
+}

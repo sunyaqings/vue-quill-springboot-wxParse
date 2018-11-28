@@ -1,0 +1,45 @@
+<!--pages/articleList/articleList.wxml-->
+<view>
+  <block wx:for="{{list}}" wx:key="{{list}}">
+    <!-- 好文 -->
+      <navigator url="../../pages/articleInfo/articleInfo?id={{item.article_id}}">
+        <view class="articleList-body">
+          <!-- body -->
+          <view class="articleList-part">
+            <div class="div-image">
+              <view class="articleList-float-view">
+                <image src="{{item.article_avatar}}" class="articleList-article-author" />
+                <text class="articleList-article-text">{{item.article_referrals}}</text>
+              </view>
+              <view class="articleList-float-time">
+                <text class="articleList-article-text">{{item.article_format_date}}</text>
+              </view>
+              <image src="{{item.article_pic}}" class="articleList-img" />
+            </div>
+            <view>
+              <view style="display:flex;flex-direction:row;">
+                <text class="item-article-title">{{item.article_title}}</text>
+              </view>
+            </view>
+         
+          <div class="articleList-tag-div">
+            <text class="articleList-tag">{{item.tag_category}}</text>
+            <view class="articleList-tag-collection-div">
+              <image class="articleList-tag-img" src="../../images/search_wikihuati_icon.png"></image>
+              <text class="articleList-collection-text">{{item.article_collection}}</text>
+              <image class="articleList-tag-comment-img" src="../../images/search_wikiicon_dianping.png"></image>
+              <text class="articleList-collection-text">{{item.article_comment}}</text>
+            </view>
+          </div>
+          <view class="bottom-line" />
+           </view>
+
+        </view>
+      </navigator>
+ 
+  </block>
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore-tips">正在加载</view>
+  </view>
+</view>
