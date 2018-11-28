@@ -1,4 +1,5 @@
 #######技术栈
+
 前端：vue+element-ui+vuex+axios+webpack+vue-quill-editor
 后端：springboot+jpa+mysql+swagger-ui
 小程序:wsparse
@@ -6,6 +7,7 @@
 
 
 #######实现功能
+
 #前端
 在vue-admin-template模板工程基础上，添加富文本编辑功能，两种方式实现图片上传自定义
 一、加载模块vue-quill-editor，结合element-ui上传组件
